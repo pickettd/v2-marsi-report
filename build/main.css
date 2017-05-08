@@ -701,6 +701,10 @@ ion-list.gray-background.list.list-md {
   justify-content: flex-end;
 }
 
+.clickable-element {
+  cursor: pointer;
+}
+
 .ion-ios-add:before {
   content: "\f102";
 }
