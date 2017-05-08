@@ -36,20 +36,6 @@ module.exports = [
         "id": "cordova-plugin-device.DeviceProxy",
         "pluginId": "cordova-plugin-device",
         "runs": true
-    },
-    {
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "pluginId": "cordova-plugin-splashscreen",
-        "clobbers": [
-            "navigator.splashscreen"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
-        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
-        "pluginId": "cordova-plugin-splashscreen",
-        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -57,10 +43,8 @@ module.exports.metadata =
 {
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
-    "cordova-plugin-console": "1.0.5",
     "cordova-plugin-statusbar": "2.2.1",
-    "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-splashscreen": "4.0.2"
+    "cordova-plugin-device": "1.1.4"
 }
 // BOTTOM OF METADATA
 });
