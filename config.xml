@@ -8,7 +8,7 @@
     </feature>
     <name>MARSI</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="marsi@mymarsi.com" href="">My Marsi</author>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
