@@ -880,16 +880,20 @@ ion-list.gray-background.list {
   min-height: 100%;
 }
 
+.print-control h2.mymarsi {
+  text-transform: none;
+}
+
 .print-control .red {
   color: #fe0000;
 }
 
 .print-control .blue {
-  color: #00fe00;
+  color: #0000fe;
 }
 
 .print-control .green {
-  color: #0000fe;
+  color: #00fe00;
 }
 
 .print-control ion-app .obey-me.print-hide .split-pane-side {
