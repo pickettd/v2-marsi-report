@@ -880,6 +880,18 @@ ion-list.gray-background.list {
   min-height: 100%;
 }
 
+.print-control .red {
+  color: #fe0000;
+}
+
+.print-control .blue {
+  color: #00fe00;
+}
+
+.print-control .green {
+  color: #0000fe;
+}
+
 .print-control ion-app .obey-me.print-hide .split-pane-side {
   display: none;
   background: green;
