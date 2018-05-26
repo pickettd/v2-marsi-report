@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-file.firefoxFileSystem", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,28 +19,14 @@
  *
 */
 
+/* global FILESYSTEM_PREFIX: true, module */
+
+FILESYSTEM_PREFIX = 'file:///';
+
 module.exports = {
-    id: 'browser',
-    cordovaVersion: '4.2.0', // cordova-js
-
-    bootstrap: function() {
-
-        var modulemapper = require('cordova/modulemapper');
-        var channel = require('cordova/channel');
-
-        modulemapper.clobbers('cordova/exec/proxy', 'cordova.commandProxy');
-
-        channel.onNativeReady.fire();
-
-        document.addEventListener("visibilitychange", function(){
-            if(document.hidden) {
-                channel.onPause.fire();
-            }
-            else {
-                channel.onResume.fire();
-            }
-        });
-
-    // End of bootstrap
+    __format__: function (fullPath) {
+        return (FILESYSTEM_PREFIX + this.name + (fullPath[0] === '/' ? '' : '/') + FileSystem.encodeURIPath(fullPath)); // eslint-disable-line no-undef
     }
 };
+
+});

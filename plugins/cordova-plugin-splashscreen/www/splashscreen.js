@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-splashscreen.SplashScreen", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,28 +19,17 @@
  *
 */
 
-module.exports = {
-    id: 'browser',
-    cordovaVersion: '4.2.0', // cordova-js
+var exec = require('cordova/exec');
 
-    bootstrap: function() {
-
-        var modulemapper = require('cordova/modulemapper');
-        var channel = require('cordova/channel');
-
-        modulemapper.clobbers('cordova/exec/proxy', 'cordova.commandProxy');
-
-        channel.onNativeReady.fire();
-
-        document.addEventListener("visibilitychange", function(){
-            if(document.hidden) {
-                channel.onPause.fire();
-            }
-            else {
-                channel.onResume.fire();
-            }
-        });
-
-    // End of bootstrap
+var splashscreen = {
+    show:function() {
+        exec(null, null, "SplashScreen", "show", []);
+    },
+    hide:function() {
+        exec(null, null, "SplashScreen", "hide", []);
     }
 };
+
+module.exports = splashscreen;
+
+});

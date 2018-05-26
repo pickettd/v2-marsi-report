@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-file.Metadata", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,28 +19,24 @@
  *
 */
 
-module.exports = {
-    id: 'browser',
-    cordovaVersion: '4.2.0', // cordova-js
-
-    bootstrap: function() {
-
-        var modulemapper = require('cordova/modulemapper');
-        var channel = require('cordova/channel');
-
-        modulemapper.clobbers('cordova/exec/proxy', 'cordova.commandProxy');
-
-        channel.onNativeReady.fire();
-
-        document.addEventListener("visibilitychange", function(){
-            if(document.hidden) {
-                channel.onPause.fire();
-            }
-            else {
-                channel.onResume.fire();
-            }
-        });
-
-    // End of bootstrap
+/**
+ * Information about the state of the file or directory
+ *
+ * {Date} modificationTime (readonly)
+ */
+var Metadata = function (metadata) {
+    if (typeof metadata === 'object') {
+        this.modificationTime = new Date(metadata.modificationTime);
+        this.size = metadata.size || 0;
+    } else if (typeof metadata === 'undefined') {
+        this.modificationTime = null;
+        this.size = 0;
+    } else {
+        /* Backwards compatiblity with platforms that only return a timestamp */
+        this.modificationTime = new Date(metadata);
     }
 };
+
+module.exports = Metadata;
+
+});

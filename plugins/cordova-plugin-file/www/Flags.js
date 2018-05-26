@@ -1,4 +1,4 @@
-/*
+cordova.define("cordova-plugin-file.Flags", function(require, exports, module) { /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -19,28 +19,20 @@
  *
 */
 
-module.exports = {
-    id: 'browser',
-    cordovaVersion: '4.2.0', // cordova-js
+/**
+ * Supplies arguments to methods that lookup or create files and directories.
+ *
+ * @param create
+ *            {boolean} file or directory if it doesn't exist
+ * @param exclusive
+ *            {boolean} used with create; if true the command will fail if
+ *            target path exists
+ */
+function Flags (create, exclusive) {
+    this.create = create || false;
+    this.exclusive = exclusive || false;
+}
 
-    bootstrap: function() {
+module.exports = Flags;
 
-        var modulemapper = require('cordova/modulemapper');
-        var channel = require('cordova/channel');
-
-        modulemapper.clobbers('cordova/exec/proxy', 'cordova.commandProxy');
-
-        channel.onNativeReady.fire();
-
-        document.addEventListener("visibilitychange", function(){
-            if(document.hidden) {
-                channel.onPause.fire();
-            }
-            else {
-                channel.onResume.fire();
-            }
-        });
-
-    // End of bootstrap
-    }
-};
+});
