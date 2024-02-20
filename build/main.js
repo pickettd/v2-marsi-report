@@ -783,7 +783,7 @@ var Data = (function () {
             this.remoteSyncDBString = 'https://';
             this.remoteSyncDBString += username + ':' + credential + '@';
             // marsi-real-world-v5 uses per organization records and new ids schema (!units etc)
-            this.remoteSyncDBString += 'marsi-envoy.herokuapp.com/marsi-real-world-v6';
+            this.remoteSyncDBString += 'render-envoy.onrender.com/rebuild-marsi-real-world-v6';
             //this.remoteSyncDBString = 'http://192.168.0.107:5984/marsi-real-world-v6'
             // Note - released this to production for local-only db testing on June 11 9PM
             var localDBString = username + '-live1-marsi-real-world-v6';
@@ -3135,7 +3135,7 @@ var AuthService = (function () {
         this.http = http;
         this.storage = storage;
         this.currentUser = null;
-        this.authServerString = 'https://marsi-envoy.herokuapp.com';
+        this.authServerString = 'https://render-envoy.onrender.com';
         this.authURLPath = '/_auth';
         this.logoutURLPath = '/_logout';
     }
